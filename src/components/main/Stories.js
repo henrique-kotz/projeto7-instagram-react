@@ -1,3 +1,5 @@
+import Story from './Story';
+
 export default function Stories() {
   const storiesList = [
     {
@@ -42,20 +44,5 @@ export default function Stories() {
         <ion-icon name="chevron-forward-circle"></ion-icon>
       </div>
   </div>
-  );
-}
-
-function Story(props) {
-  const { imagem, usuario } = props;
-
-  return (
-    <div class="story">
-      <div class="imagem">
-        <img src={imagem} />
-      </div>
-      <div class="usuario">
-        {usuario}
-      </div>
-    </div>
   );
 }

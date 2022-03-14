@@ -1,3 +1,6 @@
+import Usuario from './Usuario';
+import Sugestoes from './Sugestoes';
+
 export default function Sidebar() {
     const suggestionsList = [
         {
@@ -30,16 +33,8 @@ export default function Sidebar() {
     return (
     <div class="sidebar">
         <Usuario imagem="assets/img/catanacomics.svg" username="cataacomics" nome="Catana" />
-
-        <div class="sugestoes">
-            <div class="titulo">
-                Sugestões para você
-                <div>Ver tudo</div>
-            </div>
-
-            {suggestionsList.map((sugg) => <Sugestao imagem={sugg.imagem} nome={sugg.nome} razao={sugg.razao} />)}            
-        </div>
-
+        <Sugestoes suggestionsList={suggestionsList}/>
+        
         <div class="links">
         Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
         </div>
@@ -48,37 +43,5 @@ export default function Sidebar() {
         © 2021 INSTAGRAM DO FACEBOOK
         </div>
     </div>
-    );
-}
-
-function Usuario(props) {
-    const { imagem, username, nome } = props;
-
-    return (
-        <div class="usuario">
-            <img src={imagem} />
-            <div class="texto">
-                <strong>{username}</strong>
-                {nome}
-            </div>
-        </div>
-    );
-}
-
-function Sugestao(props) {
-    const { imagem, nome, razao } = props;
-
-    return (
-        <div class="sugestao">
-            <div class="usuario">
-                <img src={imagem} />
-            <div class="texto">
-                <div class="nome">{nome}</div>
-                <div class="razao">{razao}</div>
-            </div>
-            </div>
-
-            <div class="seguir">Seguir</div>
-        </div>
     );
 }
